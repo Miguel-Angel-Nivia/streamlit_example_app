@@ -3,8 +3,14 @@
 
 def consultar_instrucciones():
     return """
-           #### ¡Hola!
-           Este es un ejemplo de como usar streamlit para pintar cosas. El texto podría tener muchos formatos. \n
-           Expora el formato que mas te guste
-
+           # ¡Bienvenido!
+           Este es mi ejemplo de como usar Streamlit.\n
+           Autor: *Miguel Angel Nivia Ortega* :sunglasses:\n
+           # Mega Titulo
+           ## Subtitulo
+           * Apunte A
+           * Apunte B
+           * * Sub_Apunte B1
+           > Nota: Se Usa El Lenguaje De **Makefile**
+ 
            """

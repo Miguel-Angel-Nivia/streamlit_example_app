@@ -29,14 +29,14 @@ class MainView:
 
     def _dibujar_layout(self):
         # Set page title, icon, layout wide (more used space in central area) and sidebar initial state
-        st.set_page_config(page_title="Análisis mercado energía", page_icon='', layout="wide",
+        st.set_page_config(page_title="IndustriasNivix", page_icon='🤖', layout="wide",
                            initial_sidebar_state="expanded")
         # Defines the number of available columns del area principal
         self.col1, self.col2, self.col3 = st.columns([1, 1, 1])
 
         # Define lo que abrá en la barra de menu
         with st.sidebar:
-            self.menu_actual = option_menu("Menu", ["About", 'PruebaStreamlit', 'EvaluarAvances', 'ListarEvaluaciones'],
+            self.menu_actual = option_menu("Menu", ["About", 'MisPruebas', 'EvaluarAvances', 'ListarEvaluaciones'],
                                            icons=['house', 'gear'], menu_icon="cast", default_index=1)
 
     def controlar_menu(self):
@@ -44,7 +44,7 @@ class MainView:
         if self.menu_actual == "About":
             texto = consultar_instrucciones()
             st.write(texto)
-        elif self.menu_actual == "PruebaStreamlit":
+        elif self.menu_actual == "MisPruebas":
             probar_streamlit(st)
         elif self.menu_actual == "EvaluarAvances":
             agregar_evaluacion(st, self.controller)
