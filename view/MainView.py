@@ -36,7 +36,7 @@ class MainView:
 
         # Define lo que abrá en la barra de menu
         with st.sidebar:
-            self.menu_actual = option_menu("Menu", ["About", 'PaginaAutor', 'Registro', 'Listado'],
+            self.menu_actual = option_menu("Menu", ["About", 'PaginaAutor', 'RegistroEvaluación', 'ListadoEvaluaciones'],
                                            icons=['house', 'gear'], menu_icon="cast", default_index = 0)
 
     def controlar_menu(self):
@@ -46,9 +46,9 @@ class MainView:
             st.write(texto)
         elif self.menu_actual == "PaginaAutor":
             probar_streamlit(st)
-        elif self.menu_actual == "Registro":
+        elif self.menu_actual == "RegistroEvaluación":
             agregar_evaluacion(st, self.controller)
-        elif self.menu_actual == "Listado":
+        elif self.menu_actual == "ListadoEvaluaciones":
             listar_evaluacion(st, self.controller)
 
 
