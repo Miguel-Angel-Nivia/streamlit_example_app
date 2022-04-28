@@ -29,26 +29,26 @@ class MainView:
 
     def _dibujar_layout(self):
         # Set page title, icon, layout wide (more used space in central area) and sidebar initial state
-        st.set_page_config(page_title="IndustriasNivix", page_icon='🤖', layout="wide",
+        st.set_page_config(page_title="Registro_Proyectos", page_icon='🤖', layout="wide",
                            initial_sidebar_state="expanded")
         # Defines the number of available columns del area principal
-        self.col1, self.col2, self.col3 = st.columns([1, 1, 1])
+        self.col1, self.col2, self.col3, self.col4 = st.columns([1, 1, 1, 1])
 
         # Define lo que abrá en la barra de menu
         with st.sidebar:
-            self.menu_actual = option_menu("Menu", ["About", 'MisPruebas', 'EvaluarAvances', 'ListarEvaluaciones'],
-                                           icons=['house', 'gear'], menu_icon="cast", default_index=1)
+            self.menu_actual = option_menu("Menu", ["About", 'PaginaAutor', 'Registro', 'Listado'],
+                                           icons=['house', 'gear'], menu_icon="cast", default_index = 0)
 
     def controlar_menu(self):
         """TODO poner aqui su codigo de interaccion"""
         if self.menu_actual == "About":
             texto = consultar_instrucciones()
             st.write(texto)
-        elif self.menu_actual == "MisPruebas":
+        elif self.menu_actual == "PaginaAutor":
             probar_streamlit(st)
-        elif self.menu_actual == "EvaluarAvances":
+        elif self.menu_actual == "Registro":
             agregar_evaluacion(st, self.controller)
-        elif self.menu_actual == "ListarEvaluaciones":
+        elif self.menu_actual == "Listado":
             listar_evaluacion(st, self.controller)
 
 

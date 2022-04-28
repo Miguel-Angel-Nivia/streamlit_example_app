@@ -11,8 +11,9 @@ def probar_streamlit(st):
         st.write('Tu Opción:', option)
 
     with col2:
-        color = st.color_picker('Pick A Color', '#00f900')
-        st.write('The current color is', color)
+        st.write("#### Como Te Sientes Hoy?")
+        color = st.color_picker('Elige Tu Color De Animo Emocional', '#00f900')
+        st.write('El Color Elegido Es:', color)
 
     with st.expander("Mi Autobiografía"):
         st.write("¡Quietos y no se resistan, quedan bajo arresto! De:")
